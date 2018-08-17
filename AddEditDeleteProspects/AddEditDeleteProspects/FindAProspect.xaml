@@ -1,0 +1,38 @@
+﻿<Window 
+	x:Class="AddEditDeleteProspects.FindAProspect"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	WindowStartupLocation="CenterScreen"
+  Title="Find a Prospect" Height="260" Width="500">
+
+	<Grid>
+
+		<Label 
+			Content="Show last names starting with "
+			HorizontalAlignment="Left" VerticalAlignment="Top" 
+			Margin="4,10,0,0" Width="auto" Height="auto" />
+		<TextBox CharacterCasing="Upper"
+			Height="23" HorizontalAlignment="Right" Margin="0,6,217,0" Name="textBox1" VerticalAlignment="Top" Width="101" />
+
+		<DataGrid 
+			ItemsSource="{Binding Path=prospects}"
+			AutoGenerateColumns="False" HorizontalAlignment="Left" 
+			Margin="0,36,0,36" Name="dataGrid1" Width="478" >
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Last name" Binding="{Binding LastName}" Width="230" />
+				<DataGridTextColumn Header="First name" Binding="{Binding FirstName}" Width="230" />
+			</DataGrid.Columns>
+		</DataGrid>
+
+		<Button 
+			Content="Select" Margin="179,0,244,7" Name="btnSelect" Padding="10,0,10,0" Height="23" VerticalAlignment="Bottom" Click="btnSelect_Click" />
+
+		<Button 
+			Content="Cancel" Margin="243,0,176,7" Name="btnCancel" Padding="10,0,10,0" Height="23" VerticalAlignment="Bottom" Click="btnCancel_Click" />
+
+		<Button 
+			Content="Show matching prospects" Height="23" Margin="305,6,12,0" Name="btnShow" VerticalAlignment="Top" Padding="10,0,10,0" Click="btnShow_Click" />
+
+	</Grid>
+
+</Window>

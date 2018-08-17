@@ -1,0 +1,143 @@
+﻿<Window 
+	x:Class="AddEditDeleteProspects.frmProspects"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c="clr-namespace:AddEditDeleteProspects"
+	WindowStartupLocation="CenterScreen"
+  Title="Prospects" 
+	Height="260" Width="500" MaxWidth="500" MaxHeight="260" >
+	
+	<StackPanel>
+		<StackPanel Orientation="Horizontal" >
+			<Label 
+			Content="Prospects" 
+			BorderBrush="Blue" BorderThickness="1"
+			HorizontalAlignment="Left" VerticalAlignment="Top" 
+			FontSize="24" FontFamily="Comic Sans MS" 
+			Padding="13,3,13,9" Margin="5"
+			Foreground="Purple" Background="LemonChiffon" />
+
+			<Label 
+				Content="{Binding Path=label}" Foreground="Red" FontSize="14"
+				HorizontalAlignment="Right" VerticalAlignment="Center" 
+				Height="auto" Margin="180,0,10,0" />
+
+		</StackPanel>
+
+		<Grid 
+			DataContext="{Binding prospect}"
+			HorizontalAlignment="Left" VerticalAlignment="Top" 
+			Height="120" Width="475" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="25*" />
+				<RowDefinition Height="25*" />
+				<RowDefinition Height="25*" />
+				<RowDefinition Height="25*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="90*" />
+				<ColumnDefinition Width="135*" />
+				<ColumnDefinition Width="45*" />
+				<ColumnDefinition Width="32*" />
+				<ColumnDefinition Width="57*" />
+				<ColumnDefinition Width="118*" />
+			</Grid.ColumnDefinitions>
+			
+			<Label 
+				Content="First name" 
+				Grid.Row="0" Grid.Column="0" Margin="0,0,5,0"
+				HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<TextBox Name="txtFirstName"
+				Text="{Binding Path=FirstName}" 
+				Grid.Column="1" 
+				HorizontalAlignment="Left" VerticalAlignment="Center" 
+				Width="130" />
+
+			<Label
+				Content="Last name" 
+				Grid.Row="1" Grid.Column="0" Margin="0,0,5,0"
+				HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<TextBox  Name="txtLastName"
+				Text="{Binding Path=LastName}"
+				Grid.Row="1" Grid.Column="1" 
+				HorizontalAlignment="Left" VerticalAlignment="Center" 
+				Width="130" />
+
+			<Label 
+				Content="Address" 
+				Grid.Row="2" Grid.Column="0" Margin="0,0,5,0" 
+				HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<TextBox  Name="txtAddress"
+				Text="{Binding Path=Address}"
+				Grid.Row="2" Grid.Column="1" 
+				HorizontalAlignment="Left" VerticalAlignment="Center" 
+				Width="300" Grid.ColumnSpan="5" />
+
+			<Label 
+				Content="City" 
+				Grid.Row="3" Grid.Column="0" Margin="0,0,5,0"
+				HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<TextBox Name="txtCity"
+				Text="{Binding Path=City}"
+				Grid.Row="3" Grid.Column="1" 
+				HorizontalAlignment="Left" VerticalAlignment="Center" 
+				Width="130" />
+
+			<Label 
+				Content="State" 
+				Grid.Row="3" Grid.Column="2" Margin="0,0,5,0"
+				HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<TextBox Name="txtState"
+				Text="{Binding Path=State}"
+				Grid.Row="3" Grid.Column="3" Width="30" MaxLength="2" CharacterCasing="Upper" 
+				HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+			<Label 
+				Content="ZIP code" 
+				Grid.Row="3" Grid.Column="4" Margin="0,0,5,0"
+				HorizontalAlignment="Right" VerticalAlignment="Center" />
+			<TextBox Name="txtZIP"
+				Text="{Binding Path=ZIP}"
+				Grid.Row="3" Grid.Column="5" MaxLength="10"
+				HorizontalAlignment="Left" VerticalAlignment="Center" 
+				Width="90" />
+
+		</Grid>
+		
+		<StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+
+			<Button Name="btnFind"
+				Content="_Find"
+				Command="{Binding Commands.Find}"
+			  Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" />
+			<Button Name="btnAdd"
+				Content="_Add"
+				Command="{Binding Commands.Add}"
+				Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" />
+			<Button Name="btnEdit"
+				Content="_Edit"
+				Command="{Binding Commands.Edit}"
+				Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" />
+			<Button Name="btnDelete"
+				Content="_Delete"
+				Command="{Binding Commands.Delete}"
+				Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" />
+			<Button Name="btnSave"
+				Content="Save"
+				Command="{Binding Commands.Save}"
+				
+				Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" />
+			<Button Name="btnCancel"
+				Content="_Cancel"
+				Command="{Binding Commands.Cancel}"
+				Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" />
+			<Button Name="btnClose"
+				Content="Cl_ose"
+				Width="auto" Margin="5,0,5,0" Padding="10,0,10,0" 
+				Click="btnClose_Click" />
+
+		</StackPanel>
+
+	</StackPanel>
+
+</Window>

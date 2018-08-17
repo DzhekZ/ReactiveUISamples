@@ -1,0 +1,52 @@
+﻿<Application 
+	x:Class="AddEditDeleteProspects.App"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  StartupUri="MainWindow.xaml">
+
+	<Application.Resources>
+
+		<SolidColorBrush x:Key="BG">Linen</SolidColorBrush>
+		<SolidColorBrush x:Key="TC">Green</SolidColorBrush>
+		<FontFamily      x:Key="FF">Trebuchet MS</FontFamily>
+
+		<Style TargetType="Grid">
+			<Setter Property="Background" Value="{StaticResource BG}" />
+		</Style>
+
+		<Style TargetType="StackPanel">
+			<Setter Property="Background" Value="{StaticResource BG}" />
+		</Style>
+
+		<Style TargetType="Window" >
+			<Setter Property="Background" Value="{StaticResource BG}" />
+		</Style>
+
+		<Style TargetType="Label">
+			<Setter Property="FontFamily" Value="{StaticResource FF}" />
+			<Setter Property="FontSize" Value="11" />
+			<Setter Property="Padding" Value="1" />
+			<Setter Property="Foreground" Value="{StaticResource TC}" />
+			<Setter Property="Background" Value="Transparent" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="VerticalAlignment" Value="Top" />
+		</Style>
+
+		<Style TargetType="TextBox">
+			<Setter Property="FontFamily" Value="Courier New" />
+			<Setter Property="FontSize" Value="11" />
+			<Setter Property="Foreground" Value="{StaticResource TC}" />
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="True">
+					<Setter Property="Background" Value="Pink" />
+				</Trigger>
+				<Trigger Property="IsFocused" Value="True">
+					<Setter Property="Background" Value="Blue" />
+					<Setter Property="Foreground" Value="White" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+		
+  </Application.Resources>
+
+</Application>
